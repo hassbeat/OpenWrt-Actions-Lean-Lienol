@@ -81,8 +81,8 @@ EOF
 
 # 设置固件大小:
 cat >> .config <<EOF
-CONFIG_TARGET_KERNEL_PARTSIZE=16
-CONFIG_TARGET_ROOTFS_PARTSIZE=160
+CONFIG_TARGET_KERNEL_PARTSIZE=32
+CONFIG_TARGET_ROOTFS_PARTSIZE=4096
 EOF
 
 # 固件压缩:
@@ -122,10 +122,10 @@ EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
+#CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 # CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 # CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
-CONFIG_PACKAGE_luci-app-eqos=y #IP限速
+#CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 EOF
 
 # ShadowsocksR插件:
@@ -185,18 +185,18 @@ CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
-CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
+#CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
 CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
-CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
-# CONFIG_PACKAGE_luci-app-smartdns is not set #smartdns服务器
+#CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
+CONFIG_PACKAGE_luci-app-smartdns is not set #smartdns服务器
 # CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
 # CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
-# CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
+CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini is not set #解锁网易云灰色歌曲
@@ -205,7 +205,7 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-# CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
+CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
 #
 # passwall相关(禁用):
@@ -213,17 +213,17 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 #
 # VPN相关插件(禁用):
 #
-# CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
+CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
-# CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
-# CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
-# CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
-# CONFIG_PACKAGE_luci-app-brook-server is not set #brook服务端
-# CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
-# CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
+CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
+CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
+CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
+CONFIG_PACKAGE_luci-app-brook-server is not set #brook服务端
+CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
+CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
 # CONFIG_PACKAGE_luci-app-kcptun is not set #Kcptun客户端
-# CONFIG_PACKAGE_luci-app-softethervpn is not set #SoftEtherVPN服务器
+CONFIG_PACKAGE_luci-app-softethervpn is not set #SoftEtherVPN服务器
 #
 # 文件共享相关(禁用):
 #
@@ -241,9 +241,9 @@ EOF
 # LuCI主题:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
-CONFIG_PACKAGE_luci-theme-argon-light-mod=y
-CONFIG_PACKAGE_luci-theme-bootstrap=y
-CONFIG_PACKAGE_luci-theme-edge=y
+#CONFIG_PACKAGE_luci-theme-argon-light-mod=y
+#CONFIG_PACKAGE_luci-theme-bootstrap=y
+#CONFIG_PACKAGE_luci-theme-edge=y
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-freifunk-generic is not set
